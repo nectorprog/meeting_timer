@@ -5,7 +5,7 @@ function updateCountdown() {
     let nextSaturday = new Date(currentDate);
 
     nextSaturday.setDate(currentDate.getDate() + daysUntilSaturday);
-    nextSaturday.setHours(21, 0, 0, 0);
+    nextSaturday.setHours(20, 0, 0, 0);
 
     let timeDifference = nextSaturday - currentDate;
 
