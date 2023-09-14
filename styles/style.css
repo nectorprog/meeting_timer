@@ -1,0 +1,18 @@
+body {
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Чтобы контейнер занимал всю высоту видимой области */
+    text-align: center; /* Выравнивание текста по центру */
+}
+
+.data {
+    font-size: 24px; /* Размер шрифта */
+    padding: 20px; /* Отступы вокруг текста */
+    border: 1px solid #ccc; /* Граница для контейнера */
+    border-radius: 5px; /* Закругленные углы для контейнера */
+}
