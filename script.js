@@ -1,13 +1,13 @@
 function updateCountdown() {
     let currentDate = new Date();
     let currentDayOfWeek = currentDate.getDay();
-    let daysUntilSaturday = 6 - currentDayOfWeek;
-    let nextSaturday = new Date(currentDate);
+    let daysUntilMonday = (7 - currentDayOfWeek + 1) % 7;
+    let nextMonday = new Date(currentDate);
 
-    nextSaturday.setDate(currentDate.getDate() + daysUntilSaturday);
-    nextSaturday.setHours(20, 0, 0, 0);
+    nextMonday.setDate(currentDate.getDate() + daysUntilMonday);
+    nextMonday.setHours(19, 0, 0, 0);
 
-    let timeDifference = nextSaturday - currentDate;
+    let timeDifference = nextMonday - currentDate;
 
     let days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
     let hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -29,16 +29,14 @@ function updateCountdown() {
 
     let dataDiv = document.querySelector(".data");
 
-    let countdownText = "Until Saturday left: " + timeLeftFormatted;
+    let countdownText = "Until Monday left: " + timeLeftFormatted;
 
     dataDiv.innerHTML = countdownText;
 
     if (timeDifference <= 0) {
         clearInterval(intervalId);
-        dataDiv.textContent = "Saturday now!";
+        dataDiv.textContent = "It's Monday now!";
     }
 }
 
 let intervalId = setInterval(updateCountdown, 1000);
-
-
